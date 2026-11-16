@@ -1,7 +1,8 @@
 import Fastify from 'fastify';
 
 const fastify = Fastify();
-const port = 3000;
+// Порт передаёт платформа в переменной PORT; без неё — 3000
+const port = Number(process.env.PORT) || 3000;
 
 fastify.get('/', async () => {
     return 'Hello world';
